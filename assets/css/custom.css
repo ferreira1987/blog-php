@@ -1,0 +1,8 @@
+body{font-size: 14px; font-family: 'Nunito', sans-serif !important;}
+
+.form-control{height: auto; font-size: 14px; padding: 10px 15px;}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+    margin-top: 0;
+ }
