@@ -1,5 +1,4 @@
 <?php 
-require_once(__DIR__ . '/conexao/conexao.php');
 
 class User{
 

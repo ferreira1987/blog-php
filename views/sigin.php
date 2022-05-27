@@ -19,11 +19,11 @@
                     </div>
                     <div class="form-group">
                         <label class="mb-0">Senha</label>
-                        <input type="password" class="form-control" name="password" required autocomplete="off" minlength="6">
+                        <input type="password" class="form-control" name="password" id="password" required autocomplete="off" minlength="6">
                     </div>
                     <div class="form-group">
                         <label class="mb-0">Confirme a Senha</label>
-                        <input type="password" class="form-control" name="confirm" required autocomplete="off" minlength="6" id="confirm">
+                        <input type="password" class="form-control" name="confirm" id="confirm" required autocomplete="off" minlength="6" id="confirm">
                     </div>
                 </form>
             </div>

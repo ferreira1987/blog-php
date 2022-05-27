@@ -2,7 +2,9 @@
 session_start();
 ob_start();
 
+require_once(__DIR__ . '/app/conexao/conexao.php');
 require(__DIR__ . '/app/Url.php');
+
 $pagina = (empty(URL::getURL(0)) ? 'home' : URL::getURL(0));
 ?>
 <!DOCTYPE html>
@@ -18,7 +20,7 @@ $pagina = (empty(URL::getURL(0)) ? 'home' : URL::getURL(0));
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
         <div class="container">
-            <a class="navbar-brand" href="#">Blog PHP</a>
+            <a class="navbar-brand" href="/">Blog PHP</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -34,7 +36,7 @@ $pagina = (empty(URL::getURL(0)) ? 'home' : URL::getURL(0));
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="#">Meu Perfil</a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#">Sair</a>
+                                <a class="dropdown-item" href="/logout">Sair</a>
                             </div>
                         </li>
                     </ul>

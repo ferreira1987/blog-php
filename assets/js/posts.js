@@ -1,12 +1,18 @@
 class Posts{
-    insert(post){
-        // axios.post('/post', post)
-        //     .then(res => {
+    async insert(post){
+        return await axios.post('/route/post-create', post)
+    }
 
-        //     })
-        //     .catch(error => {
+    async update(post){
+        return await axios.post('/route/post-update/', post)
+    }
 
-        //     });
+    async destroy(id){
+        return await axios.post('/route/post-destroy/' + id)
+    }
+
+    async get(id){
+        return await axios.get('/route/post/' + id)
     }
 }
 

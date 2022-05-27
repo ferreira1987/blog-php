@@ -11,7 +11,7 @@
                 <form name="formNewPost" id="formNewPost">
                     <div class="form-group">
                         <label class="mb-0">Título</label>
-                        <input type="text" class="form-control" name="nome" required autocomplete="off">
+                        <input type="text" class="form-control" name="titulo" required autocomplete="off">
                     </div>
                     <div class="form-group">
                         <label class="mb-0">Descrição</label>

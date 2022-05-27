@@ -31,14 +31,15 @@ services:
   #     - laravel
 
   mysql-db:
-    image: mysql
+    image: mysql:5.7
     container_name: blog-mysql
     restart: always
     ports:
       - '3306:3306'
     environment:
       MYSQL_DATABASE: blog
-      MYSQL_ROOT_PASSWORD: root
+      MYSQL_ROOT_PASSWORD: laravel
+      MYSQL_PASSWORD: laravel
     volumes:
         - ./.docker/mysql/dbdata:/var/lib/mysql      
     networks:

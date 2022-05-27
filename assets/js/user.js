@@ -20,6 +20,19 @@ class User{
             });
     }
 
+    validadePassword(){
+        let password = document.getElementById('password');
+        let confirm = document.getElementById('confirm');
+
+        if(password.value !== confirm.value){
+            confirm.setCustomValidity('Senhas não correspondem.');
+            return false;
+        }else{
+            confirm.setCustomValidity('');
+            return true;
+        }
+    }    
+
 }
 
 export default new User();
