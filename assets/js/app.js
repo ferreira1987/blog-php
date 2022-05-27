@@ -1,30 +1,43 @@
+import posts from './posts.js';
+import user from './user.js';
+import loading from './utils/loader.js';
 
-const { createApp } = Vue;
-const VueSweetalert2 = Swal;
+$(function(){
+    $('body').on('submit', 'form[name="formNewPost"]', function(e) {
+        e.preventDefault();
+        posts.insert();
+    });
 
-import store from './components/blog/utils/store.js';
-import utils from './components/blog/utils/utils.js';
+    // Cadastrar Usuário
+    $('body').on('submit', 'form[name="formSigin"]', function(e) {
+        e.preventDefault();
+        loading.show();
+        let form = $(this).serialize();
+        user.insert(form);
+    });
 
-import loader from './components/blog/utils/loader.js';
-// import blogHome from './components/blog/Home.vue';
-// import formLogin from './components/blog/Login.vue';
-// import pageNoticia from './components/blog/Noticia.vue';
+    // Efetuar Login
+    $('body').on('submit', 'form[name="formLogin"]', function(e) {
+        e.preventDefault();
+        loading.show();
+        let form = $(this).serialize();
 
-// const emitter = mitt();
-
-const app = createApp(Home, {
-    components: {
-        blogHome,
-        formLogin,
-        pageNoticia
-    }
+        user.login(form)
+            .then(res => {
+                let data = res.data;
+                
+                if(data.type === 'success'){
+                    window.location.href = '/';
+                }else{
+                    Swal.fire({
+                        icon: data.type,
+                        title: data.title,
+                        html: data.message
+                    });                    
+                }
+            })
+            .catch(error => {
+                console.log(error);
+            });
+    });    
 });
-
-app.config.globalProperties.emitter = emitter;
-
-app.use(VueSweetalert2);
-app.use(store);
-app.use(loader);
-app.use(utils);
-
-app.mount('#app');

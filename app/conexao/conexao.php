@@ -2,10 +2,10 @@
 
 class Conexao{
 
-    private static $host = 'db';
+    private static $host = 'localhost';
     private static $database = 'blog';
     private static $username = 'root';
-    private static $password = 'root';
+    private static $password = '';
     public static $instance;
 
     
