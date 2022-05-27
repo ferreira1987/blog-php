@@ -21,3 +21,6 @@ Iniciar Projeto
 ```sh
     php -S localhost:8888
 ```
+
+Acessar o projeto
+[http://localhost:8888](http://localhost:8888)
